@@ -37,7 +37,7 @@ export const CarouselBeranda = ({
       <CarouselContent>
         {carouselImages.map((carouselImage) => (
           <CarouselItem key={carouselImage.alt}>
-            <div className="p-1">
+            <div className="p-1 bg-transparent">
               <div>
                 <div className="flex h-40 lg:h-100 w-full items-center justify-center">
                   <Image

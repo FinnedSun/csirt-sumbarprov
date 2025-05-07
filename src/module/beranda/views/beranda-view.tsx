@@ -5,21 +5,21 @@ import { Publication } from "../ui/publication"
 
 const carouselImages = [
   {
-    src: "/test1.png",
+    src: "/test2.png",
     alt: "beranda-1"
   },
   {
-    src: "/test2.png",
+    src: "/test5.jpg",
     alt: "beranda-2"
   },
   {
-    src: "/test3.png",
+    src: "/test6.jpg",
     alt: "beranda-3"
   }
 ]
 
 const seviceTitle = {
-  image: "/test1.png",
+  image: "/test4.jpg",
   title: "sumbarprov csirt",
   description: "sumbarprov csirt adalah penyedia layanan tim respon insiden keamanan siber. Guna kemudahan dalam penanganan siber, silahkan laporkan pada link dibawah ini. ",
   href: "/lapor"
@@ -48,36 +48,27 @@ const publications = [
     title: "Pentingnya Pemahaman Teknologi Keamanan Siber",
     description: "Pentingnya Pemahaman Teknologi Keamanan Siber Pentingnya Pemahaman Teknologi Keamanan Siber, Pentingnya Pemahaman Teknologi Keamanan Siber",
     href: "/lapor",
-    image: "/test1.png",
+    image: "/test6.jpg",
     cover: "/test2.png",
-    date: "2021-01-01",
+    date: new Date(2022, 4, 11),
     author: "Admin"
   },
   {
     title: "Pentingnya Pemahaman Teknologi Keamanan Siber",
     description: "Pentingnya Pemahaman Teknologi Keamanan Siber Pentingnya Pemahaman Teknologi Keamanan Siber, Pentingnya Pemahaman Teknologi Keamanan Siber",
     href: "/lapor",
-    image: "/test1.png",
+    image: "/test5.jpg",
     cover: "/test2.png",
-    date: "2021-01-01",
+    date: new Date(2022, 4, 11),
     author: "Admin"
   },
   {
     title: "Pentingnya Pemahaman Teknologi Keamanan Siber",
     description: "Pentingnya Pemahaman Teknologi Keamanan Siber Pentingnya Pemahaman Teknologi Keamanan Siber, Pentingnya Pemahaman Teknologi Keamanan Siber",
     href: "/lapor",
-    image: "/test1.png",
+    image: "/test6.jpg",
     cover: "/test2.png",
-    date: "2021-01-01",
-    author: "Admin"
-  },
-  {
-    title: "Pentingnya Pemahaman Teknologi Keamanan Siber",
-    description: "Pentingnya Pemahaman Teknologi Keamanan Siber Pentingnya Pemahaman Teknologi Keamanan Siber, Pentingnya Pemahaman Teknologi Keamanan Siber",
-    href: "/lapor",
-    image: "/test1.png",
-    cover: "/test2.png",
-    date: "2021-01-01",
+    date: new Date(2022, 4, 11),
     author: "Admin"
   },
 ]
