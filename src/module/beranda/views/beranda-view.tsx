@@ -50,7 +50,7 @@ const publications = [
     href: "/lapor",
     image: "/test6.jpg",
     cover: "/test2.png",
-    date: "2021-01-01",
+    date: new Date(2022, 4, 11),
     author: "Admin"
   },
   {
@@ -59,7 +59,7 @@ const publications = [
     href: "/lapor",
     image: "/test5.jpg",
     cover: "/test2.png",
-    date: "2021-01-01",
+    date: new Date(2022, 4, 11),
     author: "Admin"
   },
   {
@@ -68,7 +68,7 @@ const publications = [
     href: "/lapor",
     image: "/test6.jpg",
     cover: "/test2.png",
-    date: "2021-01-01",
+    date: new Date(2022, 4, 11),
     author: "Admin"
   },
 ]

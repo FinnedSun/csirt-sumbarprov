@@ -38,7 +38,7 @@ export const Services = ({
         <div className="flex flex-col mx-1 rounded-lg">
           <h1 className="text-4xl font-bold text-center my-5">{title}</h1>
           <p className="text-lg text-center flex-1/2 px-5">{description}</p>
-          <Button asChild className="my-5 lg:mb-10 w-30 flex ml-5" variant={"eleveted"}>
+          <Button asChild className="my-5 lg:mb-10 w-30 flex ml-5" variant={"elevated"}>
             <Link href={href} >
               Lihat Semua
             </Link>

@@ -8,7 +8,7 @@ interface Props {
     href: string
     image: string
     cover: string
-    date: string
+    date: Date
     author: string
   }[]
 }
@@ -36,11 +36,11 @@ export const Publication = ({
               </div>
               <div className="flex flex-col gap-2">
                 <CardTitle className="text-2xl font-bold">{publication.title}</CardTitle>
-                <p className="text-sm text-gray-500">{publication.date}</p>
+                <p className="text-sm text-gray-500">{publication.date.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                 <p className="text-sm text-gray-500">{publication.author}</p>
               </div>
               <div className="flex flex-col gap-2">
-                <CardDescription className="text-sm text-gray-500">
+                <CardDescription className="text-sm text-gray-500 line-clamp-3">
                   {publication.description}
                 </CardDescription>
                 <a href={publication.href} className="text-sm text-blue-500">Baca Selengkapnya</a>

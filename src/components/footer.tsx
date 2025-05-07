@@ -28,14 +28,25 @@ export const Footer = ({
           </address>
           <div className="ml-0 md:ml-4">
             <h2 className="text-lg font-bold">Newsletter</h2>
-            <Input
-              type="email"
-              placeholder="Enter your Email"
-              className="p-2 rounded my-4"
-            />
-            <button className="bg-blue-600 text-white px-4 py-2 rounded ml-2">
-              Subscribe
-            </button>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              // Handle form submission
+              // Show success message
+            }}>
+              <Input
+                type="email"
+                placeholder="Enter your Email"
+                required
+                aria-label="Email for newsletter"
+                className="p-2 rounded my-4"
+              />
+              <button
+                type="submit"
+                aria-label="Subscribe to newsletter"
+                className="bg-blue-600 text-white px-4 py-2 rounded ml-2">
+                Subscribe
+              </button>
+              +  </form>
           </div>
         </div>
         <p className="mt-4">© HAK CIPTA SUMBARPROV-CSIRT {new Date().getFullYear()}</p>

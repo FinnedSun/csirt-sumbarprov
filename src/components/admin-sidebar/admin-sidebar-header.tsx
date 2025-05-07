@@ -35,7 +35,7 @@ export const AdminSidebarHeader = () => {
               name={user.fullName ?? "User"}
               size={"xs"}
             />
-            <span className='text-sm'>Your prfile</span>
+            <span className='text-sm'>Your profile</span>
           </Link>
         </SidebarMenuButton>
       </SidebarMenuItem>

@@ -18,7 +18,7 @@ import { AdminSidebarHeader } from './admin-sidebar-header'
 
 
 export const AdminSidebar = () => {
-  const pathnaeme = usePathname()
+  const pathname = usePathname()
 
   return (
     <Sidebar className='pt-16 z-40' collapsible='icon'>
@@ -27,7 +27,7 @@ export const AdminSidebar = () => {
           <SidebarMenu>
             <AdminSidebarHeader />
             <SidebarMenuItem className='flex-1 flex'>
-              <SidebarMenuButton isActive={pathnaeme === "/admin"} tooltip={"Exit admin"} asChild>
+              <SidebarMenuButton isActive={pathname === "/admin"} tooltip={"Exit admin"} asChild>
                 <Link prefetch href={"/admin"}>
                   <VideoIcon className='size-5' />
                   <span className='text-sm'>Beranda</span>
