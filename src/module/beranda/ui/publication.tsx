@@ -19,33 +19,36 @@ export const Publication = ({
 
   // publication.date.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 m-4">
-      {publications.map((publication, index) => (
-        <Card key={index} className="flex flex-col gap-4">
-          <CardContent>
-            <div className="flex">
-              <Image
-                src={publication.image}
-                alt={publication.title}
-                width={1920}
-                height={1080}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <CardTitle className="text-2xl font-bold">{publication.title}</CardTitle>
-              <p className="text-sm text-gray-500">{publication.date}</p>
-              <p className="text-sm text-gray-500">{publication.author}</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <CardDescription className="text-sm text-gray-500">
-                {publication.description}
-              </CardDescription>
-              <a href={publication.href} className="text-sm text-blue-500">Baca Selengkapnya</a>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+    <div className="m-1 bg-transparent">
+      <h2 className="text-2xl font-bold m-4">Publikasi Terbaru</h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {publications.map((publication, index) => (
+          <Card key={index} className="flex flex-col gap-4">
+            <CardContent>
+              <div className="relative w-full overflow-hidden rounded-xl aspect-video">
+                <Image
+                  src={publication.image}
+                  alt={publication.title}
+                  fill
+                  className="size-full object-cover "
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <CardTitle className="text-2xl font-bold">{publication.title}</CardTitle>
+                <p className="text-sm text-gray-500">{publication.date}</p>
+                <p className="text-sm text-gray-500">{publication.author}</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <CardDescription className="text-sm text-gray-500">
+                  {publication.description}
+                </CardDescription>
+                <a href={publication.href} className="text-sm text-blue-500">Baca Selengkapnya</a>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }

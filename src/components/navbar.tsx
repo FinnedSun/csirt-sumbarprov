@@ -10,6 +10,7 @@ import { useState } from "react";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["700"]
