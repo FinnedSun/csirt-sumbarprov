@@ -1,7 +1,10 @@
-import React from 'react'
+import { SectionServiceTitle } from "./section-service-title"
+
 
 export const AdminSection = () => {
   return (
-    <div>AdminSection</div>
+    <div>
+      <SectionServiceTitle />
+    </div>
   )
 }

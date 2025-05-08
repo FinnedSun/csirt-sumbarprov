@@ -72,7 +72,9 @@ const publications = [
 
 export const BerandaView = () => {
 
-  const [data] = trpc.beranda.gatTitle.useSuspenseQuery()
+  const utils = trpc.useUtils()
+  const [data] = trpc.beranda.getTitle.useSuspenseQuery();
+
   return (
     <div>
       <section>

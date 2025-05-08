@@ -15,12 +15,12 @@ export const users = pgTable("users", {
 }, (t) => [uniqueIndex("clerk_id_idx").on(t.clerkId)]);
 
 export const serviceTitle = pgTable("service_title", {
-  title: text("title").primaryKey().notNull(),
+  title: text("title").primaryKey().notNull().unique(),
   description: text("description").notNull(),
   href: text("href").notNull(),
   image: text("image").notNull() // TODO: make this a string
 });
 
-export const videoInsertSchema = createInsertSchema(serviceTitle)
-export const videoSelectSchema = createSelectSchema(serviceTitle)
-export const videoUpdateSchema = createUpdateSchema(serviceTitle)
+export const serviceTitleInsertSchema = createInsertSchema(serviceTitle)
+export const serviceTitleSelectSchema = createSelectSchema(serviceTitle)
+export const serviceTitleUpdateSchema = createUpdateSchema(serviceTitle)
