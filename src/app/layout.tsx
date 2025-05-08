@@ -5,6 +5,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import { TRPCProvider } from "@/trpc/client";
 
+import "tailwindcss";
+import "uploadthing/tw/v4";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -23,7 +23,7 @@ export const berandaRouter = createTRPCRouter({
           title: input.title,
           description: input.description,
           href: input.href,
-          image: input.image,
+          imageUrl: input.imageUrl,
         })
         .returning();
 
@@ -40,7 +40,7 @@ export const berandaRouter = createTRPCRouter({
           title: serviceTitle.title,
           description: serviceTitle.description,
           href: serviceTitle.href,
-          image: serviceTitle.image,
+          imageUrl: serviceTitle.imageUrl,
         })
         .from(serviceTitle)
         .limit(1)

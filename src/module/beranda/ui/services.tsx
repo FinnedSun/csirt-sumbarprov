@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import { ServiceTitle } from "./components/service-title"
 
 
 
@@ -26,13 +25,25 @@ export const Services = ({
 }: Props) => {
   return (
     <>
-      <section >
-        <ServiceTitle
-          title={title}
-          description={description}
-          image={image}
-          href={href}
-        />
+      <section className="flex justify-between">
+        <div className="hidden lg:block ml-1 bg-transparent">
+          <Image
+            src={image}
+            alt="image"
+            width={1920}
+            height={1080}
+            className="h-100 w-330 object-cover rounded-lg "
+          />
+        </div>
+        <div className="flex flex-col mx-1 rounded-lg">
+          <h1 className="text-4xl font-bold text-center my-5">{title}</h1>
+          <p className="text-lg text-center flex-1/2 px-5">{description}</p>
+          <Button asChild className="my-5 lg:mb-10 w-30 flex ml-5" variant={"eleveted"}>
+            <Link href={href} >
+              Lihat Semua
+            </Link>
+          </Button>
+        </div>
       </section>
       <section>
         <div className="m-1 bg-transparent rounded-lg relative overflow-hidden">
