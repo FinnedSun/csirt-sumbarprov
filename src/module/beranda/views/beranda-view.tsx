@@ -1,7 +1,10 @@
+"use client"
+
 import { CableIcon, CloudIcon, MonitorIcon } from "lucide-react"
 import { CarouselBeranda } from "../ui/components/carousel-beranda"
 import { Services } from "../ui/services"
 import { Publication } from "../ui/publication"
+import { trpc } from "@/trpc/client"
 
 const carouselImages = [
   {
@@ -17,13 +20,6 @@ const carouselImages = [
     alt: "beranda-3"
   }
 ]
-
-const seviceTitle = {
-  image: "/test4.jpg",
-  title: "sumbarprov csirt",
-  description: "sumbarprov csirt adalah penyedia layanan tim respon insiden keamanan siber. Guna kemudahan dalam penanganan siber, silahkan laporkan pada link dibawah ini. ",
-  href: "/lapor"
-}
 
 const services = [
   {
@@ -75,16 +71,18 @@ const publications = [
 
 
 export const BerandaView = () => {
+
+  const [data] = trpc.beranda.gatTitle.useSuspenseQuery()
   return (
     <div>
       <section>
         <CarouselBeranda carouselImages={carouselImages} />
       </section>
       <Services
-        title={seviceTitle.title}
-        image={seviceTitle.image}
-        description={seviceTitle.description}
-        href={seviceTitle.href}
+        title={data.title}
+        image={data.image}
+        description={data.description}
+        href={data.href}
         services={services}
 
       />
