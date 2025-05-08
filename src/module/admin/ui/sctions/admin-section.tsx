@@ -1,9 +1,9 @@
 import { SectionServiceTitle } from "./section-service-title"
 
-
 export const AdminSection = () => {
   return (
-    <div>
+    <div className="space-y-8">
+
       <SectionServiceTitle />
     </div>
   )

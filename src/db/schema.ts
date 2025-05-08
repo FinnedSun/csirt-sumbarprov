@@ -15,7 +15,7 @@ export const users = pgTable("users", {
 }, (t) => [uniqueIndex("clerk_id_idx").on(t.clerkId)]);
 
 export const serviceTitle = pgTable("service_title", {
-  title: text("title").primaryKey().notNull().unique(),
+  title: text("title").primaryKey().unique(),
   description: text("description").notNull(),
   href: text("href").notNull(),
   image: text("image").notNull() // TODO: make this a string

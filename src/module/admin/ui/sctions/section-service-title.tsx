@@ -19,7 +19,7 @@ import { z } from "zod"
 
 export const SectionServiceTitle = () => {
   const utils = trpc.useUtils()
-  const { data } = trpc.beranda.getTitle.useQuery()
+  const [data] = trpc.beranda.getTitle.useSuspenseQuery()
   const mutate = trpc.beranda.editTitle.useMutation({
     onSuccess: () => {
       utils.beranda.getTitle.invalidate()
@@ -40,66 +40,66 @@ export const SectionServiceTitle = () => {
   }
 
   return (
-    <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-4">
-          <FormField
-            name="title"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>
-                  <div className="flex items-center gap-x-2">
-                    Title
-                  </div>
-                </FormLabel>
-                <FormControl>
-                  <Input {...field} placeholder="Judul Layanan" />
-                </FormControl>
-              </FormItem>
-            )}
-          />
 
-          <FormField
-            name="description"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>
-                  <div className="flex items-center gap-x-2">
-                    Description
-                  </div>
-                </FormLabel>
-                <FormControl>
-                  <Textarea
-                    {...field}
-                    placeholder="Deskripsi Layanan"
-                    rows={4}
-                  />
-                </FormControl>
-              </FormItem>
-            )}
-          />
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-4">
+        <FormField
+          name="title"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>
+                <div className="flex items-center gap-x-2">
+                  Title
+                </div>
+              </FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="Judul Layanan" />
+              </FormControl>
+            </FormItem>
+          )}
+        />
 
-          <FormField
-            name="href"
-            render={({ field }) => (
-              <FormItem >
-                <FormLabel>
-                  <div className="flex items-center gap-x-2">
-                    Link
-                  </div>
-                </FormLabel>
-                <FormControl>
-                  <Input {...field} placeholder="Link Halaman" />
-                </FormControl>
-              </FormItem>
-            )}
-          />
+        <FormField
+          name="description"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>
+                <div className="flex items-center gap-x-2">
+                  Description
+                </div>
+              </FormLabel>
+              <FormControl>
+                <Textarea
+                  {...field}
+                  placeholder="Deskripsi Layanan"
+                  rows={4}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
 
-          <Button type="submit" className="w-full">
-            Simpan Perubahan
-          </Button>
-        </form>
-      </Form >
-    </>
+        <FormField
+          name="image"
+          render={({ field }) => (
+            <FormItem >
+              <FormLabel>
+                <div className="flex items-center gap-x-2">
+                  Image
+                </div>
+              </FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="Link Halaman" />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <Button type="submit" className="w-full">
+          Simpan Perubahan
+        </Button>
+      </form>
+    </Form >
+
   )
 }
