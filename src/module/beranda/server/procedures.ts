@@ -1,21 +1,13 @@
 
 import { db } from "@/db";
 import { baseProcedure, createTRPCRouter, protectedProcedure } from "@/trpc/init";
-import z from "zod";
 import { serviceTitle, serviceTitleUpdateSchema } from "@/db/schema";
-import { isAdmin } from "@/module/admin/lib/admin";
 import { TRPCError } from "@trpc/server";
-import { eq } from "drizzle-orm";
 
 export const berandaRouter = createTRPCRouter({
   editTitle: protectedProcedure
     .input(serviceTitleUpdateSchema)
     .mutation(async ({ input, ctx }) => {
-      const user = ctx.clerkUserId;
-
-      if (!isAdmin(user ?? '')) {
-        throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Akses ditolak: Hanya admin yang diizinkan mengedit' });
-      }
 
       const [data] = await db
         .update(serviceTitle)
